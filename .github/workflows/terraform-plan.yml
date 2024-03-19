@@ -25,10 +25,10 @@ jobs:
           # aws_profile: ${{ secrets.AWS_PROFILE }}
 
       - name: Terraform Init
-        run: terraform init
+        run: terraform init shared/poc
 
       - name: Terraform Validate
-        run: terraform validate
+        run: terraform validate shared/poc
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan shared/poc
