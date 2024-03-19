@@ -15,14 +15,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.7.5
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: your_aws_region
-          # If using a named profile:
-          # aws_profile: ${{ secrets.AWS_PROFILE }}
+          aws_region: eu-west-1
+          aws_profile: ${{ secrets.AWS_PROFILE }}
 
       - name: Terraform Init
         run: terraform init -chdir=shared/poc
