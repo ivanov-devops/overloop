@@ -16,7 +16,7 @@ jobs:
 
       - uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 0.14.4
+          terraform_version: 0.12.9
 
       - name: Terraform Init
         uses: hashicorp/terraform-github-actions/init@v0.4.0
