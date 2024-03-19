@@ -5,7 +5,7 @@ module "vpc" {
   name = "main"
   cidr = "10.0.0.0/16"
 
-  azs             = ["us-east-1a", "us-east-1b"]
+  azs             = ["eu-west-1a", "eu-west-1b"]
   private_subnets = ["10.0.10.0/24", "10.0.20.0/24"]
   public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
 
@@ -24,6 +24,6 @@ module "vpc" {
   enable_dns_support   = true
 
   tags = {
-    Environment = "staging"
+    Environment = local.env
   }
 }
