@@ -5,6 +5,5 @@ terraform {
     region         = "eu-west-1"
     dynamodb_table = "mmstat-shared-infrastructure-states-lock"
     encrypt        = true
-    profile        = "mmstat"
   }
 }
