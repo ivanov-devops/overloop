@@ -23,7 +23,7 @@ jobs:
           TF_ACTION_WORKING_DIR: 'shared/poc'
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: terraform init
+        run: ls -latrh && terraform init
 
       - name: Terraform Plan
         env:
@@ -31,4 +31,4 @@ jobs:
           TF_ACTION_WORKING_DIR: 'shared/poc'
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: terraform plan
+        run: ls -latrh && terraform plan
