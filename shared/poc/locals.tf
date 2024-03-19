@@ -7,4 +7,5 @@ locals {
     Environment = local.env
     Terraform   = "true"
   }
+  cluster_name = "EKS-Cluster"
 }

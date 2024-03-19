@@ -1,11 +1,13 @@
+data "aws_availability_zones" "available" {}
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.6.0"
 
-  name = "main"
+  name = "Demo-VPC"
   cidr = "10.0.0.0/16"
 
-  azs             = ["eu-west-1a", "eu-west-1b"]
+  azs             = data.aws_availability_zones.available.names
   private_subnets = ["10.0.10.0/24", "10.0.20.0/24"]
   public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
 
