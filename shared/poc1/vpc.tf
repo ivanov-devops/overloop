@@ -4,11 +4,11 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.6.0"
 
-  name = "Demo-VPC"
-  cidr = "10.0.0.0/16"
+  name = local.vpc_name
+  cidr = local.vpc_cidr_block
 
   azs            = data.aws_availability_zones.available.names
-  public_subnets = ["10.0.4.0/24", "10.0.5.0/24"]
+  public_subnets = local.public_subnets_cidr_blocks
 
   enable_nat_gateway     = false
   single_nat_gateway     = false

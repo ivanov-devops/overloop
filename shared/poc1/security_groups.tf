@@ -6,9 +6,9 @@ resource "aws_security_group" "web_sg" {
   tags = local.common_tags
 
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
+    from_port   = local.ingress_rules[0].from_port
+    to_port     = local.ingress_rules[0].to_port
+    protocol    = local.ingress_rules[0].protocol
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
