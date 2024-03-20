@@ -25,3 +25,9 @@ resource "aws_lb_target_group" "web_server_target_group" {
 
   tags = local.common_tags
 }
+
+resource "aws_lb_target_group_attachment" "ec2_target_attachment" {
+  count            = 2
+  target_group_arn = aws_lb_target_group.web_server_target_group.arn
+  target_id        = module.ec2-instance[count.index].id
+}
