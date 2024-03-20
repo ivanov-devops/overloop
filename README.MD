@@ -76,7 +76,10 @@ The Terraform configuration files are organized as follows:
 - `alb.tf`: Defines the Application Load Balancer (ALB).
 - `backend.tf`: Configures the backend for storing Terraform state.
 - `data.tf`: Defines data sources used in the configuration.
+- `ec2.tf`: Defines EC2 instances.
 - `locals.tf`: Declares local values and variables.
+- `outputs.tf`: Specifies the outputs to display after Terraform applies changes.
+- `providers.tf`: Configures the providers, such as AWS.
 - `route_table.tf`: Defines the route table and associations for public subnets.
 - `user_data_nginx.sh`: Shell script for configuring Nginx on EC2 instances.
 - `versions.tf`: Specifies the Terraform version constraints.
