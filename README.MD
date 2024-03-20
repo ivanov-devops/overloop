@@ -51,7 +51,7 @@ Before you begin, ensure you have the following:
     terraform init
     ```
 
-5. Review the `terraform.tfvars` file and update variables as needed, such as AWS region, profile, etc.
+5. Review the `locals.tf` and `data.tf` files and update variables as needed, such as AWS region, profile, etc.
 
 6. Review the Terraform plan:
 
