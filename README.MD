@@ -36,32 +36,38 @@ Before you begin, ensure you have the following:
 2. Navigate to the cloned directory:
 
     ```bash
-    cd overloop/shared/poc1
+    cd overloop
     ```
 
-3. Initialize Terraform:
+3. Navigate to the `shared/poc1` directory where the web application infrastructure is defined:
+
+    ```bash
+    cd shared/poc1
+    ```
+
+4. Initialize Terraform:
 
     ```bash
     terraform init
     ```
 
-4. Review the `locals.tf` and `data.tf` files and update variables as needed, such as AWS region, profile, etc.
+5. Review the `terraform.tfvars` file and update variables as needed, such as AWS region, profile, etc.
 
-5. Review the Terraform plan:
+6. Review the Terraform plan:
 
     ```bash
     terraform plan
     ```
 
-6. Apply the Terraform changes:
+7. Apply the Terraform changes:
 
     ```bash
     terraform apply
     ```
 
-7. After deployment, Terraform will output the ALB DNS name, public subnets, and security group ID.
+8. After deployment, Terraform will output the ALB DNS name, public subnets, and security group ID.
 
-8. Access the web application using the ALB DNS name.
+9. Access the web application using the ALB DNS name.
 
 ## GitHub Actions Workflow
 
@@ -92,6 +98,10 @@ The Terraform configuration files are organized as follows:
 - **Subnets**: Public subnets for hosting EC2 instances.
 - **Security Groups**: Controls inbound and outbound traffic to EC2 instances.
 - **VPC (Virtual Private Cloud)**: Provides an isolated network environment for the infrastructure.
+
+# Other Demos
+
+In addition to the web application infrastructure, there is another demo available for installing VPC and EKS in the `shared/poc` folder.
 
 ## Cleanup
 
