@@ -69,14 +69,18 @@ The repository includes a GitHub Actions workflow named "Terraform Plan" that au
 
 - **Terraform Plan**: Checks out the repository, initializes Terraform, and runs `terraform plan` to generate an execution plan for changes to infrastructure.
 
-## Structure
+## File Structure
 
 The Terraform configuration files are organized as follows:
 
-- `main.tf`: Contains the main infrastructure resources such as ALB, EC2 instances, subnets, etc.
-- `locals.tf`: Defines local variables used within the configuration.
-- `variables.tf`: Declares input variables used in the configuration.
-- `outputs.tf`: Defines outputs to display after Terraform execution.
+- `alb.tf`: Defines the Application Load Balancer (ALB).
+- `backend.tf`: Configures the backend for storing Terraform state.
+- `data.tf`: Defines data sources used in the configuration.
+- `locals.tf`: Declares local values and variables.
+- `route_table.tf`: Defines the route table and associations for public subnets.
+- `user_data_nginx.sh`: Shell script for configuring Nginx on EC2 instances.
+- `versions.tf`: Specifies the Terraform version constraints.
+- `vpc.tf`: Defines the Virtual Private Cloud (VPC) and associated networking resources.
 
 ## Resources Created
 
