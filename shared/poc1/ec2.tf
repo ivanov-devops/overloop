@@ -8,33 +8,13 @@ module "ec2-instance" {
   count         = 2
   subnet_id     = module.vpc.public_subnets[0]
 
-  # Create a security group inline
+  # Reference the security group created in security_groups.tf
   vpc_security_group_ids = [
-    aws_security_group.ec2_security_group.id
+    aws_security_group.web_sg.id
   ]
 
   associate_public_ip_address = true
   user_data                   = file("${path.module}/user_data_nginx.sh")
 
   tags = local.common_tags
-}
-
-resource "aws_security_group" "ec2_security_group" {
-  name        = local.security_group_name
-  description = "Allow HTTP traffic"
-
-  # Define ingress rules
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
 }
