@@ -1,9 +1,9 @@
 module "alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "9.8.0"
-  name = local.alb_name
-  subnets            = module.vpc.public_subnets
-  tags = local.common_tags
+  name    = local.alb_name
+  subnets = module.vpc.public_subnets
+  tags    = local.common_tags
 }
 
 resource "aws_lb_listener" "front_end" {

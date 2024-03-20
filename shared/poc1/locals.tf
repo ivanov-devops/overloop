@@ -12,13 +12,13 @@ locals {
     Terraform   = "true"
   }
 
-  vpc_name             = "Demo-VPC"
-  vpc_cidr_block       = "10.0.0.0/16"
-  availability_zones   = ["eu-west-1a", "eu-west-1b"]
+  vpc_name                   = "Demo-VPC"
+  vpc_cidr_block             = "10.0.0.0/16"
+  availability_zones         = ["eu-west-1a", "eu-west-1b"]
   public_subnets_cidr_blocks = ["10.0.1.0/24", "10.0.2.0/24"]
 
-  security_group_name  = "web_sg"
-  ingress_rules       = [
+  security_group_name = "web_sg"
+  ingress_rules = [
     {
       from_port   = 80
       to_port     = 80
@@ -27,11 +27,11 @@ locals {
     }
   ]
 
-  ec2_instance_name    = "web_server"
-  ec2_instance_type    = "t2.micro"
+  ec2_instance_name = "web_server"
+  ec2_instance_type = "t2.micro"
 
-  alb_name             = "my-alb"
-  target_group_name = "web-server-target-group"  # Adjusted target group name
-  target_group_port = 80
+  alb_name              = "my-alb"
+  target_group_name     = "web-server-target-group" # Adjusted target group name
+  target_group_port     = 80
   target_group_protocol = "HTTP"
 }

@@ -20,5 +20,5 @@ data "aws_ami" "amazon_linux_2" {
 }
 
 data "aws_availability_zones" "azs" {
-    state = "available"
+  state = "available"
 }
