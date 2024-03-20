@@ -1,3 +1,4 @@
+# Retrieve the most recent Amazon Linux 2 AMI
 data "aws_ami" "amazon_linux_2" {
   most_recent = true
 
@@ -19,6 +20,7 @@ data "aws_ami" "amazon_linux_2" {
   owners = ["amazon"]
 }
 
+# Retrieve information about available AWS availability zones
 data "aws_availability_zones" "azs" {
   state = "available"
 }

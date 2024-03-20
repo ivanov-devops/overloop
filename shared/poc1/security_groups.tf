@@ -1,3 +1,4 @@
+# Define a security group for web servers
 resource "aws_security_group" "web_sg" {
   name        = local.security_group_name
   description = "Allow HTTP traffic"
@@ -13,6 +14,7 @@ resource "aws_security_group" "web_sg" {
   }
 }
 
+# Output the security group ID for reference
 output "security_group_id" {
   value = aws_security_group.web_sg.id
 }
