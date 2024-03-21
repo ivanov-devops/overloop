@@ -86,7 +86,6 @@ The Terraform configuration files are organized as follows:
 - `locals.tf`: Declares local values and variables.
 - `outputs.tf`: Specifies the outputs to display after Terraform applies changes.
 - `providers.tf`: Configures the providers, such as AWS.
-- `route_table.tf`: Defines the route table and associations for public subnets.
 - `user_data_nginx.sh`: Shell script for configuring Nginx on EC2 instances.
 - `versions.tf`: Specifies the Terraform version constraints.
 - `vpc.tf`: Defines the Virtual Private Cloud (VPC) and associated networking resources.
