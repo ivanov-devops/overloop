@@ -6,7 +6,9 @@ module "ec2-instance" {
   ami           = data.aws_ami.amazon_linux_2.id # Amazon Linux 2 AMI ID
   instance_type = local.ec2_instance_type
   count         = 2 # Number of EC2 instances to create
-  subnet_id     = module.vpc.public_subnets[0] # Subnet ID where the EC2 instances will be launched
+
+  # Specify different subnet IDs for each instance
+  subnet_id     = element(module.vpc.public_subnets, count.index)
 
   # Reference the security group created in security_groups.tf
   vpc_security_group_ids = [
