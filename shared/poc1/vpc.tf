@@ -15,20 +15,10 @@ module "vpc" {
 
   enable_dns_hostnames = true # Enable DNS hostnames
   enable_dns_support   = true # Enable DNS support
-
   tags = {
     Environment = local.env
   }
-}
 
-# Output public subnets
-output "public_subnets" {
-  value = module.vpc.public_subnets
-}
-
-# Internet Gateway and attaching it to the VPC
-resource "aws_internet_gateway" "igw" {
-  vpc_id = module.vpc.vpc_id
-
-  tags = local.common_tags
+  # Define Internet Gateway inside the VPC module
+  create_igw = true # Enable creation of Internet Gateway within the VPC module
 }
